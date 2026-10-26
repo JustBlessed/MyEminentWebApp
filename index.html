@@ -1,209 +1,461 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="light" name="color-scheme"/>
-<meta content="#25152d" name="theme-color"/>
-<meta content="Explore airport protocol, professional event personnel and event services at Eminent Protocol and Event Services, Abuja. Choose a service and prepare a booking enquiry." name="description"/>
-<title>Eminent | Protocol &amp; Event Services</title>
-<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="styles.css" rel="stylesheet"/>
-<link href="feature-photos.css" rel="stylesheet"/>
-<script defer="" src="script.js"></script>
-<script defer="" src="feature-photos.js"></script>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="light" name="color-scheme" />
+  <meta content="#25152d" name="theme-color" />
+  <meta
+    content="Explore airport protocol, professional event personnel and event services at Eminent Protocol and Event Services, Abuja. Choose a service and prepare a booking enquiry."
+    name="description" />
+  <title>Eminent | Protocol &amp; Event Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
+  <link href="styles.css" rel="stylesheet" />
+  <link href="feature-photos.css" rel="stylesheet" />
+  <script defer="" src="script.js"></script>
+  <script defer="" src="feature-photos.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@8.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header" id="top">
-<div class="container header-inner">
-<a aria-label="Eminent Protocol and Event Services — homepage" class="brand" href="#top">
-<img alt="Eminent Protocol and Event Services" height="297" src="assets/eminent-logo.png" width="804"/>
-</a>
-<button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu" class="menu-toggle" id="menu-toggle" type="button">
-<span></span><span></span><span></span>
-</button>
-<nav aria-label="Main navigation" class="primary-navigation" id="primary-navigation">
-<a href="#services">Services</a>
-<a href="#why-us">About</a>
-<a href="gallery.html">Gallery</a>
-<a href="#planning-tools">Travel &amp; event tools</a>
-<a href="#contact">Contact</a>
-<a class="nav-cta" href="#booking">Book a service <span aria-hidden="true">↗</span></a>
-</nav>
-</div>
-</header>
-<main id="main">
-<section aria-labelledby="hero-title" class="hero">
-<div class="container hero-layout hero-has-photo">
-<div class="hero-copy">
-<p class="eyebrow eyebrow-light">EMINENT PROTOCOL &amp; EVENT SERVICES</p>
-<h1 id="hero-title">Moments that matter<br/><em>Handled beautifully</em></h1>
-<p class="hero-description">Airport protocol assistance across Nigeria, professional ushers, waiters, greeters, and event planning service in Abuja.</p>
-<div class="hero-buttons">
-<a class="button button-gold" href="#services">Explore services <span aria-hidden="true">↗</span></a>
-<a class="button button-outline-light" href="#booking">Request a booking</a>
-</div>
-<p class="hero-subline"><span aria-hidden="true" class="gold-dot"></span> A class for executives </p>
-</div>
-<figure class="site-photo hero-feature-photo" data-photo-frame="">
-<img alt="Eminent Protocol and Event Services team standing outdoors in matching green-and-white uniforms." data-optional-photo="" fetchpriority="high" height="853" src="assets/website/home.jpg" width="1280"/>
-</figure>
-</div>
-<div aria-hidden="true" class="hero-watermark">E</div>
-</section>
-<section aria-labelledby="services-title" class="section services-section" id="services">
-<div class="container">
-<div class="section-heading section-heading-row">
-<div>
-<p class="eyebrow">WHAT WE DO</p>
-<h2 id="services-title">Consider it <em>taken care of.</em></h2>
-<p>Discover a service, view its details and add it to your booking enquiry.</p>
-</div>
-</div>
-<div aria-label="Find a service" class="service-toolbar" role="search">
-<div aria-label="Filter services by category" class="service-filters" role="group">
-<button aria-pressed="true" class="filter-button is-active" data-filter="all" type="button">All services</button>
-<button aria-pressed="false" class="filter-button" data-filter="travel" type="button">Airport &amp; travel</button>
-<button aria-pressed="false" class="filter-button" data-filter="events" type="button">Events</button>
-<button aria-pressed="false" class="filter-button" data-filter="talent" type="button">Talent</button>
-</div>
-<div class="service-search-wrap">
-<label class="visually-hidden" for="service-search">Search services</label>
-<span aria-hidden="true">⌕</span>
-<input autocomplete="off" id="service-search" placeholder="Search services…" type="search"/>
-</div>
-</div>
-<p aria-live="polite" class="result-count" id="service-count" role="status"></p>
-<div class="service-grid" id="service-grid"></div>
-<p class="empty-state" hidden="" id="no-services">No matching services. Try a different keyword or choose “All services”.</p>
-</div>
-</section>
-<section aria-labelledby="about-title" class="feature-strip" id="why-us">
-<div class="container feature-grid about-has-photo">
-<div class="feature-copy">
-<p class="eyebrow eyebrow-gold">A LITTLE ABOUT US</p>
-<h2 id="about-title">Trusted service<br/><em>We never compromise excellence</em></h2>
-<p>Eminent Protocol and Event Services supports travellers, organisations and individuals. We assist with airport procedures, supply ushers, waiters, greeters, coordinate events and connect clients with suitable event vendors in Abuja.</p>
-<ul class="tick-list">
-<li>Solutions tailored to the occasion</li>
-<li>Support for individuals and organisations</li>
-<li>Abuja-based contact and enquiries</li>
-</ul>
-<a class="text-link" href="#booking">Plan something with us <span aria-hidden="true">↗</span></a>
-</div>
-<figure class="site-photo about-feature-photo" data-photo-frame="">
-<img alt="Two Eminent event ushers in matching green-and-pink dresses standing at a red-carpet entrance." data-optional-photo="" height="720" loading="lazy" src="assets/website/about.jpg" width="1080"/>
-</figure>
-</div>
-</section>
-<section aria-labelledby="team-in-action-title" class="team-in-action section" id="team-in-action"><div class="container"><div class="section-heading"><p class="eyebrow">OUR PEOPLE</p><h2 id="team-in-action-title">Our team <em>in action.</em></h2><p>See our people at work, helping guests and supporting events.</p></div><div class="team-photo-grid"><figure class="team-photo-card"><button aria-label="Enlarge photo: Guest reception" class="feature-photo-open" data-feature-caption="Guest reception" data-feature-photo="assets/website/team-1.jpg" type="button"><img alt="Eminent personnel helping to receive guests at a conference entrance." decoding="async" height="853" loading="lazy" src="assets/website/team-1.jpg" width="1280"/><span aria-hidden="true" class="photo-enlarge-hint">View full photo</span></button><figcaption>Guest reception</figcaption></figure><figure class="team-photo-card"><button aria-label="Enlarge photo: Event-floor support" class="feature-photo-open" data-feature-caption="Event-floor support" data-feature-photo="assets/website/team-2.jpg" type="button"><img alt="Eminent team members assisting attendees in a conference hall." decoding="async" height="853" loading="lazy" src="assets/website/team-2.jpg" width="1280"/><span aria-hidden="true" class="photo-enlarge-hint">View full photo</span></button><figcaption>Event-floor support</figcaption></figure><figure class="team-photo-card"><button aria-label="Enlarge photo: Behind-the-scenes preparation" class="feature-photo-open" data-feature-caption="Behind-the-scenes preparation" data-feature-photo="assets/website/team-3.jpg" type="button"><img alt="Eminent team coordinating food and event setup under a canopy." decoding="async" height="2048" loading="lazy" src="assets/website/team-3.jpg" width="1152"/><span aria-hidden="true" class="photo-enlarge-hint">View full photo</span></button><figcaption>Behind-the-scenes preparation</figcaption></figure><figure class="team-photo-card"><button aria-label="Enlarge photo: Guest hospitality" class="feature-photo-open" data-feature-caption="Guest hospitality" data-feature-photo="assets/website/team-4.jpg" type="button"><img alt="Eminent hospitality staff engaging with guests during an event." decoding="async" height="720" loading="lazy" src="assets/website/team-4.jpg" width="1080"/><span aria-hidden="true" class="photo-enlarge-hint">View full photo</span></button><figcaption>Guest hospitality</figcaption></figure><figure class="team-photo-card"><button aria-label="Enlarge photo: Refreshments service" class="feature-photo-open" data-feature-caption="Refreshments service" data-feature-photo="assets/website/team-5.jpg" type="button"><img alt="Eminent waiter in a white shirt and black bow tie serving refreshments." decoding="async" height="720" loading="lazy" src="assets/website/team-5.jpg" width="1080"/><span aria-hidden="true" class="photo-enlarge-hint">View full photo</span></button><figcaption>Refreshments service</figcaption></figure></div><p class="photo-stories-gallery"><a class="text-link" href="gallery.html">View the separate event gallery →</a></p></div></section>
-<section aria-labelledby="tools-title" class="section planning-section" id="planning-tools">
-<div class="container">
-<div class="section-heading centered">
-<p class="eyebrow">USEFUL PLANNING TOOLS</p>
-<h2 id="tools-title">A little planning goes <em>a long way.</em></h2>
-<p>Explore real-time third-party information to help prepare for a trip or outdoor event. These tools do not confirm a booking.</p>
-</div>
-<div class="tools-grid">
-<article aria-labelledby="weather-title" class="tool-panel">
-<div class="tool-heading"><div aria-hidden="true" class="tool-icon">W</div><span class="api-chip">LIVE API</span></div>
-<h3 id="weather-title">Event weather outlook</h3>
-<p>Check a city's forecast before planning arrivals or an outdoor celebration, for dates within the available forecast window.</p>
-<form class="tool-form" id="weather-form">
-<div class="two-col">
-<div class="field"><label for="weather-city">Destination city</label><input id="weather-city" maxlength="70" minlength="2" name="weatherCity" placeholder="e.g. Abuja" required="" type="text" value="Abuja"/></div>
-<div class="field"><label for="weather-date">Event date</label><input id="weather-date" name="weatherDate" required="" type="date"/></div>
-</div>
-<button class="button button-dark" id="weather-button" type="submit">Check forecast <span aria-hidden="true">↗</span></button>
-</form>
-<div aria-atomic="true" aria-live="polite" class="tool-results" id="weather-results" role="status"><p>Enter a city and date to see a live weather outlook.</p></div>
-<p class="api-credit">Data: <a href="https://open-meteo.com/" rel="noopener noreferrer" target="_blank">Open-Meteo</a>. Forecasts are subject to change.</p>
-</article>
-<article aria-labelledby="country-title" class="tool-panel tool-panel-alt">
-<div class="tool-heading"><div aria-hidden="true" class="tool-icon">C</div><span class="api-chip">LIVE API</span></div>
-<h3 id="country-title">Destination essentials</h3>
-<p>Look up a destination's capital, languages, currencies and time zones when preparing travel arrangements.</p>
-<form class="tool-form" id="country-form">
-<div class="field"><label for="country-name">Country</label><input id="country-name" maxlength="70" minlength="2" name="country" placeholder="e.g. Nigeria" required="" type="text" value="Nigeria"/></div>
-<button class="button button-dark" id="country-button" type="submit">Explore destination <span aria-hidden="true">↗</span></button>
-</form>
-<div aria-atomic="true" aria-live="polite" class="tool-results" id="country-results" role="status"><p>Enter a country to see destination facts from a public data provider.</p></div>
-<p class="api-credit">Data: <a href="https://countries.dev/" rel="noopener noreferrer" target="_blank">countries.dev</a>. Verify travel requirements with official sources.</p>
-</article>
-</div>
-</div>
-</section>
-<section aria-labelledby="booking-title" class="section booking-section" id="booking">
-<div class="container booking-layout">
-<aside class="booking-intro">
-<p class="eyebrow eyebrow-gold">LET'S MAKE IT EMINENT</p>
-<h2 id="booking-title">Tell us what <em>you have in mind.</em></h2>
-<p>Select a service and provide a few details. We'll prepare your enquiry for our Eminent service so you can review and send it directly to us via email.</p>
-<div aria-label="How it works" class="process-list">
-<div><span>01</span><p><strong>Choose</strong><br/>Pick the service you need.</p></div>
-<div><span>02</span><p><strong>Personalise</strong><br/>Tell us the dates and details.</p></div>
-<div><span>03</span><p><strong>Send</strong><br/>Approve the email in your email app.</p></div>
-</div>
-<p class="booking-disclaimer"><strong>Please note:</strong> An enquiry is not a confirmed booking. No payments are collected on this website.</p>
-</aside>
-<div class="booking-card">
-<div class="form-card-top"><h3>Booking enquiry</h3><span>REQUIRED FIELDS ARE LABELLED</span></div>
-<form id="booking-form">
-<fieldset>
-<legend>Your contact information</legend>
-<div class="two-col">
-<div class="field"><label for="full-name">Full name <span class="required-label">(required)</span></label><input autocomplete="name" id="full-name" maxlength="100" minlength="2" name="fullName" placeholder="Your full name" required="" type="text"/></div>
-<div class="field"><label for="email">Email address <span class="required-label">(required)</span></label><input autocomplete="email" id="email" maxlength="120" name="email" placeholder="you@example.com" required="" type="email"/></div>
-</div>
-<div class="two-col">
-<div class="field"><label for="phone">Contact phone</label><input autocomplete="tel" id="phone" maxlength="24" name="phone" pattern="[+0-9() .-]{7,24}" placeholder="e.g. +234 801 234 5678" title="Use 7–24 characters: numbers, spaces, +, parentheses, full stops or hyphens." type="tel"/></div>
-<div class="field"><label for="contact-method">Preferred contact method <span class="required-label">(required)</span></label><select id="contact-method" name="contactMethod" required=""><option value="Email">Email</option><option value="Phone">Phone</option></select></div>
-</div>
-</fieldset>
-<fieldset>
-<legend>Service requirements</legend>
-<div class="two-col">
-<div class="field"><label for="booking-service">Service <span class="required-label">(required)</span></label><select id="booking-service" name="service" required=""><option value="">Choose a service</option></select></div>
-<div class="field"><label for="booking-date">Preferred service date <span class="required-label">(required)</span></label><input id="booking-date" name="date" required="" type="date"/></div>
-</div>
-<div class="two-col">
-<div class="field"><label for="booking-city">City / venue <span class="required-label">(required)</span></label><input id="booking-city" maxlength="120" minlength="2" name="city" placeholder="e.g. Abuja, Wuse 2" required="" type="text"/></div>
-<div class="field"><label for="guest-count">Guests / travellers</label><input id="guest-count" max="100000" min="1" name="guests" placeholder="e.g. 20" step="1" type="number"/></div>
-</div>
-<div class="field"><label for="event-details">Tell us about your request <span class="required-label">(required)</span></label><textarea id="event-details" maxlength="700" minlength="10" name="details" placeholder="Share the type of event or travel assistance, expected time, special requirements, and anything else we should know." required="" rows="5"></textarea><p class="field-help">Do not include passport details, payment card numbers or sensitive personal information.</p></div>
-</fieldset>
-<div class="consent-row"><input id="consent" name="consent" required="" type="checkbox"/><label for="consent">I agree to include my details in the enquiry email I choose to send. <span class="required-label">(required)</span></label></div>
-<div class="form-buttons">
-<button class="button button-gold" id="prepare-email" type="submit">Prepare enquiry email <span aria-hidden="true">↗</span></button>
-<button class="button button-secondary" id="save-draft" type="button">Save draft on this device</button>
-</div>
-<div class="draft-actions"><button class="inline-action" id="load-draft" type="button">Load saved draft</button><button class="inline-action" id="clear-draft" type="button">Delete saved draft</button></div>
-<div aria-live="polite" class="form-feedback" id="booking-feedback" role="status" tabindex="-1"></div>
-<div class="email-preview" hidden="" id="email-preview"><h4>Your prepared enquiry</h4><pre id="email-preview-text"></pre><button class="button button-secondary" id="copy-enquiry" type="button">Copy enquiry text</button></div>
-</form>
-</div>
-</div>
-</section>
-<section aria-labelledby="contact-title" class="contact-section" id="contact">
-<div class="container contact-grid">
-<div><p class="eyebrow eyebrow-gold">GET IN TOUCH</p><h2 id="contact-title">Let's create an <em>exceptional experience.</em></h2></div>
-<div class="contact-details">
-<div><span>EMAIL</span><a href="mailto:eminentprotocolandeventservice@gmail.com">eminentprotocolandeventservice@gmail.com</a></div>
-<div class="contact-whatsapp"><span>CALL / MESSAGE ON WHATSAPP</span><a href="https://wa.me/2348182481085" target="_blank" rel="noopener noreferrer" aria-label="Message Eminent on WhatsApp at +2348182481085 (opens in a new tab)">+2348182481085 <span aria-hidden="true" class="contact-link-arrow">↗</span></a></div>
-<div><span>LOCATION</span><address>MB-7, Cappador Mall, Lobito Crescent,<br/>Wuse 2, Abuja, Nigeria</address></div>
-</div>
-</div>
-</section>
-</main>
-<footer class="site-footer"><div class="container footer-inner"><span>© <span id="copyright-year">2026</span> All rights reserved by Eminent Protocol and Event Services</span><span>Website created by Blessed Ibochi</span><a href="#top">Back to top ↑</a></div></footer>
-<dialog aria-describedby="dialog-description" aria-labelledby="dialog-title" id="service-dialog">
-<div class="dialog-top"><span class="dialog-category" id="dialog-category"></span><button aria-label="Close service details" class="dialog-close" id="dialog-close" type="button">×</button></div>
-<div class="dialog-content"><p class="eyebrow">DISCOVER THIS SERVICE</p><h2 id="dialog-title"></h2><p id="dialog-description"></p><h3>How we can help</h3><ul class="tick-list" id="dialog-features"></ul><button class="button button-gold" id="dialog-book" type="button">Enquire about this service <span aria-hidden="true">↗</span></button></div>
-</dialog>
-<script type="application/ld+json">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a aria-label="Eminent Protocol and Event Services — homepage" class="brand" href="#top">
+        <img alt="Eminent Protocol and Event Services" height="297" src="assets/eminent-logo.png" width="804" />
+      </a>
+      <button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu"
+        class="menu-toggle" id="menu-toggle" type="button">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Main navigation" class="primary-navigation" id="primary-navigation">
+        <a href="#services">Services</a>
+        <a href="#why-us">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#planning-tools">Travel &amp; event tools</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#booking">Book a service <ion-icon name="arrow-forward-outline"
+            aria-hidden="true"></ion-icon></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section aria-labelledby="hero-title" class="hero">
+      <div class="container hero-layout hero-has-photo">
+        <div class="hero-copy">
+          <p class="eyebrow eyebrow-light">EMINENT PROTOCOL &amp; EVENT SERVICES</p>
+          <h1 id="hero-title">A class<br /><em>for executives...</em></h1>
+          <p class="hero-description">Get airport protocol assistance across Nigeria, professional ushers, waiters,
+            greeters, and event planning services in Abuja.</p>
+          <div class="hero-buttons">
+            <a class="button button-gold" href="#services">Explore services <ion-icon name="arrow-forward-outline"
+                aria-hidden="true"></ion-icon></a>
+            <a class="button button-outline-light" href="#booking">Request a booking</a>
+          </div>
+          <!-- <p class="hero-subline"><span aria-hidden="true"></span> </p> -->
+        </div>
+        <figure class="site-photo hero-feature-photo" data-photo-frame="">
+          <img alt="Eminent Protocol and Event Services team standing outdoors in matching green-and-white uniforms."
+            data-optional-photo="" fetchpriority="high" height="853" src="assets/website/home.jpg" width="1280" />
+        </figure>
+      </div>
+      <div aria-hidden="true" class="hero-watermark">E</div>
+    </section>
+    <section aria-labelledby="services-title" class="section services-section" id="services">
+      <div class="container">
+        <div class="section-heading section-heading-row">
+          <div>
+            <p class="eyebrow">WHAT WE DO</p>
+            <h2 id="services-title">Consider it <em>taken care of.</em></h2>
+            <p>Discover a service, view its details and add it to your booking enquiry.</p>
+          </div>
+        </div>
+        <div aria-label="Find a service" class="service-toolbar" role="search">
+          <div aria-label="Filter services by category" class="service-filters" role="group">
+            <button aria-pressed="true" class="filter-button is-active" data-filter="all" type="button">All
+              services</button>
+            <button aria-pressed="false" class="filter-button" data-filter="travel" type="button">Airport &amp;
+              travel</button>
+            <button aria-pressed="false" class="filter-button" data-filter="events" type="button">Events</button>
+            <button aria-pressed="false" class="filter-button" data-filter="talent" type="button">Talent</button>
+          </div>
+          <div class="service-search-wrap">
+            <label class="visually-hidden" for="service-search">Search services</label>
+            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+            <input autocomplete="off" id="service-search" placeholder="Search services…" type="search" />
+          </div>
+        </div>
+        <p aria-live="polite" class="result-count" id="service-count" role="status"></p>
+        <div class="service-grid" id="service-grid"></div>
+        <p class="empty-state" hidden="" id="no-services">No matching services. Try a different keyword or choose “All
+          services”.</p>
+      </div>
+    </section>
+    <section aria-labelledby="about-title" class="feature-strip" id="why-us">
+      <div class="container feature-grid about-has-photo">
+        <div class="feature-copy">
+          <p class="eyebrow eyebrow-gold">A LITTLE ABOUT US</p>
+          <h2 id="about-title">You can trust us!<br /><em>We never compromise excellence</em></h2>
+          <p>Eminent Protocol and Event Services supports organisations and individuals with
+            airport procedures, event ushers, waiters, greeters and lots more...</p>
+          <ul class="tick-list">
+            <li>Solutions are tailored to your occasion</li>
+            <li>Airport Passenger Support for individuals and organisations</li>
+            <li>Seamless and budget-friendly event coordination</li>
+          </ul>
+          <a class="text-link" href="#booking">Plan something with us <ion-icon name="arrow-forward-outline"
+              aria-hidden="true"></ion-icon></a>
+        </div>
+        <figure class="site-photo about-feature-photo" data-photo-frame="">
+          <img alt="Two Eminent event ushers in matching green-and-pink dresses standing at a red-carpet entrance."
+            data-optional-photo="" height="720" loading="lazy" src="assets/website/about.jpg" width="1080" />
+        </figure>
+      </div>
+    </section>
+    <section aria-labelledby="team-in-action-title" class="team-in-action section" id="team-in-action">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">OUR PEOPLE</p>
+          <h2 id="team-in-action-title">Our team <em>in action.</em></h2>
+          <p>See our staff at work, helping guests and supporting events.</p>
+        </div>
+        <div class="team-photo-grid">
+          <figure class="team-photo-card"><button aria-label="Enlarge photo: Guest reception" class="feature-photo-open"
+              data-feature-caption="Guest reception" data-feature-photo="assets/website/team-1.jpg" type="button"><img
+                alt="Eminent personnel helping to receive guests at a conference entrance." decoding="async"
+                height="853" loading="lazy" src="assets/website/team-1.jpg" width="1280" /><span aria-hidden="true"
+                class="photo-enlarge-hint">View full photo</span></button>
+            <figcaption>Guest reception</figcaption>
+          </figure>
+          <figure class="team-photo-card"><button aria-label="Enlarge photo: Event-floor support"
+              class="feature-photo-open" data-feature-caption="Event-floor support"
+              data-feature-photo="assets/website/team-2.jpg" type="button"><img
+                alt="Eminent team members assisting attendees in a conference hall." decoding="async" height="853"
+                loading="lazy" src="assets/website/team-2.jpg" width="1280" /><span aria-hidden="true"
+                class="photo-enlarge-hint">View full photo</span></button>
+            <figcaption>Event-floor support</figcaption>
+          </figure>
+          <figure class="team-photo-card"><button aria-label="Enlarge photo: Behind-the-scenes preparation"
+              class="feature-photo-open" data-feature-caption="Behind-the-scenes preparation"
+              data-feature-photo="assets/website/team-3.jpg" type="button"><img
+                alt="Eminent team coordinating food and event setup under a canopy." decoding="async" height="2048"
+                loading="lazy" src="assets/website/team-3.jpg" width="1152" /><span aria-hidden="true"
+                class="photo-enlarge-hint">View full photo</span></button>
+            <figcaption>Behind-the-scenes preparation</figcaption>
+          </figure>
+          <figure class="team-photo-card"><button aria-label="Enlarge photo: Guest hospitality"
+              class="feature-photo-open" data-feature-caption="Guest hospitality"
+              data-feature-photo="assets/website/team-4.jpg" type="button"><img
+                alt="Eminent hospitality staff engaging with guests during an event." decoding="async" height="720"
+                loading="lazy" src="assets/website/team-4.jpg" width="1080" /><span aria-hidden="true"
+                class="photo-enlarge-hint">View full photo</span></button>
+            <figcaption>Guest hospitality</figcaption>
+          </figure>
+          <figure class="team-photo-card"><button aria-label="Enlarge photo: Refreshments service"
+              class="feature-photo-open" data-feature-caption="Refreshments service"
+              data-feature-photo="assets/website/team-5.jpg" type="button"><img
+                alt="Eminent waiter in a white shirt and black bow tie serving refreshments." decoding="async"
+                height="720" loading="lazy" src="assets/website/team-5.jpg" width="1080" /><span aria-hidden="true"
+                class="photo-enlarge-hint">View full photo</span></button>
+            <figcaption>Refreshments service</figcaption>
+          </figure>
+        </div>
+        <p class="photo-stories-gallery"><a class="text-link" href="#gallery">View the full event gallery
+            <ion-icon name="arrow-down-outline" aria-hidden="true"></ion-icon></a></p>
+      </div>
+    </section>
+    <section aria-labelledby="gallery-title" class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow">EMINENT PHOTO GALLERY</p>
+          <h2 id="gallery-title">Our work, <em>in pictures.</em></h2>
+          <p>A look at our staff supporting events, welcoming guests and providing eminent services.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-card">
+            <button aria-label="Enlarge photo: The event team" class="gallery-open" data-gallery-index="0" type="button"><img
+                alt="Six members of the Eminent event team wearing black and red uniforms outdoors." decoding="async" height="1080" loading="lazy"
+                src="assets/gallery/event-team-men.jpg" width="1080" /><span class="gallery-view">View photograph</span></button>
+            <figcaption>The event team</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <button aria-label="Enlarge photo: Our ushers" class="gallery-open" data-gallery-index="1" type="button"><img
+                alt="Four event ushers in matching black outfits standing outside a venue." decoding="async" height="1080" loading="lazy"
+                src="assets/gallery/ushers-team.jpg" width="1080" /><span class="gallery-view">View photograph</span></button>
+            <figcaption>Our ushers</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <button aria-label="Enlarge photo: Guest hospitality" class="gallery-open" data-gallery-index="2" type="button"><img
+                alt="An event attendant assisting a seated guest at a function." decoding="async" height="1080" loading="lazy"
+                src="assets/gallery/guest-hospitality.jpg" width="1080" /><span class="gallery-view">View photograph</span></button>
+            <figcaption>Guest hospitality</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <button aria-label="Enlarge photo: Guest gift presentation" class="gallery-open" data-gallery-index="3" type="button"><img
+                alt="An event team member presenting a gift bag to an attendee." decoding="async" height="1080" loading="lazy"
+                src="assets/gallery/guest-gift-presentation.jpg" width="1080" /><span class="gallery-view">View photograph</span></button>
+            <figcaption>Guest gift presentation</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <button aria-label="Enlarge photo: Guest gift service" class="gallery-open" data-gallery-index="4" type="button"><img
+                alt="An event attendant carrying gift bags for guests at a celebration." decoding="async" height="1080" loading="lazy"
+                src="assets/gallery/guest-gifts.jpg" width="1080" /><span class="gallery-view">View photograph</span></button>
+            <figcaption>Guest gift service</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <button aria-label="Enlarge photo: Event venue support" class="gallery-open" data-gallery-index="5" type="button"><img
+                alt="An overhead view of seating and attendees at a large event." decoding="async" height="1080" loading="lazy"
+                src="assets/gallery/event-venue.jpg" width="1080" /><span class="gallery-view">View photograph</span></button>
+            <figcaption>Event venue support</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <button aria-label="Enlarge photo: Reception and red carpet" class="gallery-open" data-gallery-index="6" type="button"><img
+                alt="Two event staff welcoming guests alongside a red carpet." decoding="async" height="1080" loading="lazy"
+                src="assets/gallery/red-carpet.jpg" width="1080" /><span class="gallery-view">View photograph</span></button>
+            <figcaption>Reception and red carpet</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <button aria-label="Enlarge photo: Guest arrival support" class="gallery-open" data-gallery-index="7" type="button"><img
+                alt="Event representatives assisting guests in a reception area." decoding="async" height="1080" loading="lazy"
+                src="assets/gallery/arrival-reception.jpg" width="1080" /><span class="gallery-view">View photograph</span></button>
+            <figcaption>Guest arrival support</figcaption>
+          </figure>
+        </div>
+        <div class="gallery-bottom">
+          <p>Planning an occasion or need a professional team?</p><a class="button button-gold"
+            href="#booking">Enquire about a service</a>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="tools-title" class="section planning-section" id="planning-tools">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow">USEFUL PLANNING TOOLS</p>
+          <h2 id="tools-title">A little planning goes <em>a long way.</em></h2>
+          <p>Explore real-time third-party information to help prepare for a trip or outdoor event. These tools do not
+            confirm a booking.</p>
+        </div>
+        <div class="tools-grid">
+          <article aria-labelledby="weather-title" class="tool-panel">
+            <div class="tool-heading">
+              <!-- <div aria-hidden="true" class="tool-icon">W</div><span class="api-chip">LIVE API</span> -->
+            </div>
+            <h3 id="weather-title">Event weather outlook</h3>
+            <p>Check a city's forecast before planning arrivals or an outdoor celebration, for dates within the
+              available forecast window.</p>
+            <form class="tool-form" id="weather-form">
+              <div class="two-col">
+                <div class="field"><label for="weather-city">Destination city</label><input id="weather-city"
+                    maxlength="70" minlength="2" name="weatherCity" placeholder="e.g. Abuja" required="" type="text"
+                    value="Abuja" /></div>
+                <div class="field"><label for="weather-date">Event date</label><input id="weather-date"
+                    name="weatherDate" required="" type="date" /></div>
+              </div>
+              <button class="button button-dark" id="weather-button" type="submit">Check forecast <ion-icon
+                  name="arrow-forward-outline" aria-hidden="true"></ion-icon></button>
+            </form>
+            <div aria-atomic="true" aria-live="polite" class="tool-results" id="weather-results" role="status">
+              <p>Enter a city and date to see a live weather outlook.</p>
+            </div>
+            <p class="api-credit">Data: <a href="https://open-meteo.com/" rel="noopener noreferrer"
+                target="_blank">Open-Meteo</a>. Forecasts are subject to change.</p>
+          </article>
+          <article aria-labelledby="country-title" class="tool-panel tool-panel-alt">
+            <div class="tool-heading">
+              <!-- <div aria-hidden="true" class="tool-icon">C</div><span class="api-chip">LIVE API</span> -->
+            </div>
+            <h3 id="country-title">Destination essentials</h3>
+            <p>Look up a destination's capital, languages, currencies and time zones when preparing travel arrangements.
+            </p>
+            <form class="tool-form" id="country-form">
+              <div class="field"><label for="country-name">Country</label><input id="country-name" maxlength="70"
+                  minlength="2" name="country" placeholder="e.g. Nigeria" required="" type="text" value="Nigeria" />
+              </div>
+              <button class="button button-dark" id="country-button" type="submit">Explore destination <ion-icon
+                  name="arrow-forward-outline" aria-hidden="true"></ion-icon></button>
+            </form>
+            <div aria-atomic="true" aria-live="polite" class="tool-results" id="country-results" role="status">
+              <p>Enter a country to see destination facts from a public data provider.</p>
+            </div>
+            <p class="api-credit">Data: <a href="https://countries.dev/" rel="noopener noreferrer"
+                target="_blank">countries.dev</a>. Verify travel requirements with official sources.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="booking-title" class="section booking-section" id="booking">
+      <div class="container booking-layout">
+        <aside class="booking-intro">
+          <p class="eyebrow eyebrow-gold">LET'S MAKE IT EMINENT</p>
+          <h2 id="booking-title">Tell us what <em>you have in mind.</em></h2>
+          <p>Select a service and provide a few details. We'll prepare your enquiry for our Eminent service so you can
+            review and send it directly to us via email.</p>
+          <div aria-label="How it works" class="process-list">
+            <div><span><ion-icon aria-hidden="true" name="color-palette-outline"></ion-icon></span>
+              <p><strong>Choose</strong><br />Pick the service you need.</p>
+            </div>
+            <div><span><ion-icon aria-hidden="true" name="people-outline"></ion-icon></span>
+              <p><strong>Personalise</strong><br />Tell us the dates and details.</p>
+            </div>
+            <div><span><ion-icon aria-hidden="true" name="send-outline"></ion-icon></span>
+              <p><strong>Send</strong><br />Approve the email in your email app.</p>
+            </div>
+          </div>
+          <p class="booking-disclaimer"><strong>Please note:</strong> An enquiry is not a confirmed booking. No payments
+            are collected on this website.</p>
+        </aside>
+        <div class="booking-card">
+          <div class="form-card-top">
+            <h3>Booking enquiry</h3><span>FIELDS MARKED * ARE REQUIRED</span>
+          </div>
+          <form id="booking-form">
+            <fieldset>
+              <legend>Your contact information</legend>
+              <div class="two-col">
+                <div class="field"><label for="full-name">Full name <span
+                      aria-hidden="true" class="required-label">*</span></label><input autocomplete="name" id="full-name"
+                    maxlength="100" minlength="2" name="fullName" placeholder="Your full name" required=""
+                    type="text" /></div>
+                <div class="field"><label for="email">Email address <span
+                      aria-hidden="true" class="required-label">*</span></label><input autocomplete="email" id="email"
+                    maxlength="120" name="email" placeholder="you@example.com" required="" type="email" /></div>
+              </div>
+              <div class="two-col">
+                <div class="field"><label for="phone">Contact phone</label><input autocomplete="tel" id="phone"
+                    maxlength="24" name="phone" pattern="[+0-9() .-]{7,24}" placeholder="e.g. +234 801 234 5678"
+                    title="Use 7–24 characters: numbers, spaces, +, parentheses, full stops or hyphens." type="tel" />
+                </div>
+                <div class="field"><label for="contact-method">Preferred contact method <span
+                      aria-hidden="true" class="required-label">*</span></label><select id="contact-method" name="contactMethod"
+                    required="">
+                    <option value="Email">Email</option>
+                    <option value="Phone">Phone</option>
+                  </select></div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Service requirements</legend>
+              <div class="two-col">
+                <div class="field"><label for="booking-service">Service <span
+                      aria-hidden="true" class="required-label">*</span></label><select id="booking-service" name="service"
+                    required="">
+                    <option value="">Choose a service</option>
+                  </select></div>
+                <div class="field"><label for="booking-date">Preferred service date <span
+                      aria-hidden="true" class="required-label">*</span></label><input id="booking-date" name="date" required=""
+                    type="date" /></div>
+              </div>
+              <div class="two-col">
+                <div class="field"><label for="booking-city">City / venue <span
+                      aria-hidden="true" class="required-label">*</span></label><input id="booking-city" maxlength="120"
+                    minlength="2" name="city" placeholder="e.g. Abuja, Wuse 2" required="" type="text" /></div>
+                <div class="field"><label for="guest-count">Guests / travellers</label><input id="guest-count"
+                    max="100000" min="1" name="guests" placeholder="e.g. 20" step="1" type="number" /></div>
+              </div>
+              <div class="field"><label for="event-details">Tell us about your request <span
+                    aria-hidden="true" class="required-label">*</span></label><textarea id="event-details" maxlength="700"
+                  minlength="10" name="details"
+                  placeholder="Share the type of event or travel assistance, expected time, special requirements, and anything else we should know."
+                  required="" rows="5"></textarea>
+                <p class="field-help">Do not include passport details, payment card numbers or sensitive personal
+                  information.</p>
+              </div>
+            </fieldset>
+            <div class="consent-row"><input id="consent" name="consent" required="" type="checkbox" /><label
+                for="consent">I agree to include my details in the enquiry email I choose to send. <span
+                  aria-hidden="true" class="required-label">*</span></label></div>
+            <div class="form-buttons">
+              <button class="button button-gold" id="prepare-email" type="submit">Prepare enquiry email <ion-icon
+                  name="arrow-forward-outline" aria-hidden="true"></ion-icon></button>
+              <button class="button button-secondary" id="save-draft" type="button">Save draft on this device</button>
+            </div>
+            <div class="draft-actions"><button class="inline-action" id="load-draft" type="button">Load saved
+                draft</button><button class="inline-action" id="clear-draft" type="button">Delete saved draft</button>
+            </div>
+            <div aria-live="polite" class="form-feedback" id="booking-feedback" role="status" tabindex="-1"></div>
+            <div class="email-preview" hidden="" id="email-preview">
+              <h4>Your prepared enquiry</h4>
+              <pre id="email-preview-text"></pre><button class="button button-secondary" id="copy-enquiry"
+                type="button">Copy enquiry text</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="contact-title" class="contact-section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow eyebrow-gold">GET IN TOUCH</p>
+          <h2 id="contact-title">Let's create an <em>exceptional experience.</em></h2>
+        </div>
+        <div class="contact-details">
+          <div><span><ion-icon aria-hidden="true" name="mail-outline"></ion-icon>EMAIL</span><a
+              href="mailto:eminentprotocolandeventservice@gmail.com">eminentprotocolandeventservice@gmail.com</a></div>
+          <div class="contact-whatsapp"><span><ion-icon aria-hidden="true" name="call-outline"></ion-icon>CALL / MESSAGE ON WHATSAPP</span><a href="https://wa.me/2348182481085"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Message Eminent on WhatsApp at +2348182481085 (opens in a new tab)">+2348182481085 <ion-icon
+                name="arrow-forward-outline" aria-hidden="true" class="contact-link-arrow"></ion-icon></a></div>
+          <div><span><ion-icon aria-hidden="true" name="pin-outline"></ion-icon>LOCATION</span>
+            <address>MB-7, Cappador Mall, Lobito Crescent,<br />Wuse 2, Abuja, Nigeria</address>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner"><span>© <span id="copyright-year">2026</span> All rights reserved by Eminent
+        Protocol and Event Services</span><span>Website created by Blessed Ibochi</span><a href="#top">Back to top
+        <ion-icon name="arrow-up-outline" aria-hidden="true"></ion-icon></a></div>
+  </footer>
+  <dialog aria-describedby="dialog-description" aria-labelledby="dialog-title" id="service-dialog">
+    <div class="dialog-top"><span class="dialog-category" id="dialog-category"></span><button
+        aria-label="Close service details" class="dialog-close" id="dialog-close" type="button">×</button></div>
+    <div class="dialog-content">
+      <p class="eyebrow">DISCOVER THIS SERVICE</p>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-description"></p>
+      <h3>How we can help</h3>
+      <ul class="tick-list" id="dialog-features"></ul><button class="button button-gold" id="dialog-book"
+        type="button">Enquire about this service <ion-icon name="arrow-forward-outline"
+          aria-hidden="true"></ion-icon></button>
+    </div>
+  </dialog>
+  <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"Eminent Protocol and Event Services","description":"Airport protocol services across Nigeria, professional event staff, event planning and management in Abuja, Nigeria.","email":"eminentprotocolandeventservice@gmail.com","telephone":"+2348182481085","address":{"@type":"PostalAddress","streetAddress":"MB-7, Cappador Mall, Lobito Crescent, Wuse 2","addressLocality":"Abuja","addressCountry":"NG"}}
   </script>
-<dialog aria-labelledby="feature-photo-caption" class="feature-photo-dialog" id="feature-photo-dialog"><div class="feature-photo-dialog-inner"><div class="feature-photo-dialog-head"><span>EMINENT PHOTOGRAPHS</span><button aria-label="Close enlarged photograph" id="feature-photo-close" type="button">Close ×</button></div><img alt="" height="853" id="feature-photo-full" width="1280"/><p id="feature-photo-caption"></p></div></dialog></body>
+  <dialog aria-labelledby="gallery-dialog-caption" class="gallery-dialog" id="gallery-dialog">
+    <div class="gallery-dialog-inner">
+      <div class="gallery-dialog-top">
+        <p class="gallery-dialog-brand">EMINENT GALLERY</p><button aria-label="Close photograph"
+          class="gallery-dialog-close" id="gallery-close" type="button">Close <ion-icon name="close-outline"
+            aria-hidden="true"></ion-icon></button>
+      </div>
+      <div class="gallery-lightbox-image"><img alt="" height="1080" id="gallery-full-image" width="1080" /></div>
+      <div class="gallery-dialog-bottom">
+        <button aria-label="Previous photograph" class="gallery-step" id="gallery-prev" type="button"><ion-icon
+            name="arrow-back-outline" aria-hidden="true"></ion-icon> Previous</button>
+        <p aria-live="polite" id="gallery-dialog-caption"></p>
+        <button aria-label="Next photograph" class="gallery-step" id="gallery-next" type="button">Next <ion-icon
+            name="arrow-forward-outline" aria-hidden="true"></ion-icon></button>
+      </div>
+    </div>
+  </dialog>
+  <dialog aria-labelledby="feature-photo-caption" class="feature-photo-dialog" id="feature-photo-dialog">
+    <div class="feature-photo-dialog-inner">
+      <div class="feature-photo-dialog-head"><span>EMINENT PHOTOGRAPHS</span><button
+          aria-label="Close enlarged photograph" id="feature-photo-close" type="button">Close ×</button></div><img
+        alt="" height="853" id="feature-photo-full" width="1280" />
+      <p id="feature-photo-caption"></p>
+    </div>
+  </dialog>
+</body>
+
 </html>

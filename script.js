@@ -1,12 +1,5 @@
 "use strict";
 
-/*
- * Eminent Protocol and Event Services — application logic.
- * Public API references: https://open-meteo.com/en/docs and
- * https://open-meteo.com/en/docs/geocoding-api and https://countries.dev/docs/api/name
- * External data is displayed with textContent, never untrusted HTML.
- */
-
 const CONTACT_EMAIL = "eminentprotocolandeventservice@gmail.com";
 const DRAFT_KEY = "eminent-booking-draft-v1";
 
@@ -51,7 +44,8 @@ const services = [
 
 const qs = (selector, parent = document) => parent.querySelector(selector);
 const qsa = (selector, parent = document) => [...parent.querySelectorAll(selector)];
-/* Photographs allocated by the business owner — originals copied unchanged. */
+
+
 const servicePhotos = {
   "airport-protocol": [
     { file: "airport.jpg", alt: "Eminent protocol officer assisting a traveller with their luggage in an airport terminal.", caption: "Airport Protocol Services" }
@@ -91,13 +85,20 @@ function makeElement(tag, className, text) {
   return element;
 }
 
+function setButtonLabel(button, text, iconName = "arrow-forward-outline") {
+  button.textContent = `${text} `;
+  const icon = document.createElement("ion-icon");
+  icon.setAttribute("name", iconName);
+  icon.setAttribute("aria-hidden", "true");
+  button.append(icon);
+}
+
 function categoryLabel(category) {
   return ({ travel: "Airport and travel", events: "Events and hospitality", talent: "Brand promotion" })[category] || "Service";
 }
 
 function createServiceCard(service) {
   const card = makeElement("article", service.featured ? "service-card featured" : "service-card");
-  // The first two services still receive prominent layouts, without a visible "main service" label.
   if (service.id === "flight-hotel" || service.id === "tailored-services") card.classList.add("illustrated-service");
   card.append(makeElement("p", "card-category", categoryLabel(service.category)));
   card.append(makeElement("h3", "", service.title));
@@ -107,7 +108,7 @@ function createServiceCard(service) {
     service.features.forEach(item => benefits.append(makeElement("li", "", item)));
     card.append(benefits);
   }
-  /* Each photograph opens at its full original aspect ratio using an accessible dialog. */
+
   if (servicePhotos[service.id]) {
     const photos = servicePhotos[service.id];
     const media = makeElement("div", `service-photo-grid service-photo-grid--${photos.length}`);
@@ -132,11 +133,13 @@ function createServiceCard(service) {
     card.append(media);
   }
   const actions = makeElement("div", "service-card-actions");
-  const details = makeElement("button", "card-action", "View details →");
+  const details = makeElement("button", "card-action");
+  setButtonLabel(details, "View details");
   details.type = "button";
   details.setAttribute("aria-label", `View details for ${service.title}`);
   details.addEventListener("click", () => openServiceDetails(service.id));
-  const book = makeElement("button", "card-book", "Select service +");
+  const book = makeElement("button", "card-book");
+  setButtonLabel(book, "Select service", "add-outline");
   book.type = "button";
   book.setAttribute("aria-label", `Select ${service.title} for a booking enquiry`);
   book.addEventListener("click", () => chooseService(service.id));
@@ -325,7 +328,7 @@ function loadDraft() {
       const control = bookingForm.elements.namedItem(name);
       if (control && typeof data[name] === "string") control.value = data[name];
     });
-    qs("#consent").checked = false; // Consent must be given each time.
+    qs("#consent").checked = false;
     setBookingFeedback("Draft restored. Review the information and tick the consent box before preparing an email.", "success");
   } catch { setBookingFeedback("This saved draft could not be read.", "error"); }
 }
@@ -361,7 +364,6 @@ function initializeBooking() {
   });
 }
 
-/* Reusable safe API fetching with clear error and timeout handling. */
 async function fetchJson(url) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 12000);
@@ -448,7 +450,7 @@ async function onWeatherSubmit(event) {
     showApiMessage(result, `${error.message || "Weather data is unavailable."} Check the city and your connection, then try again.`, true);
   } finally {
     button.disabled = false;
-    button.textContent = "Check forecast ↗";
+    setButtonLabel(button, "Check forecast");
   }
 }
 
@@ -456,7 +458,6 @@ function renderCountry(country) {
   const result = qs("#country-results");
   result.classList.remove("error");
   const fragment = document.createDocumentFragment();
-  // countries.dev uses plain strings for names and capitals, and arrays for languages/currencies.
   const name = typeof country.name === "string" ? country.name : country.name?.common;
   fragment.append(makeElement("p", "data-title", name || "Destination information"));
   const dl = document.createElement("dl");
@@ -486,7 +487,6 @@ async function onCountrySubmit(event) {
   button.textContent = "Finding destination…";
   showApiMessage(result, "Looking up destination facts…");
   try {
-    // No API key is needed. See https://countries.dev/docs/api/name
     const candidates = await fetchJson(`https://countries.dev/name/${encodeURIComponent(countryName)}`);
     if (!Array.isArray(candidates) || candidates.length === 0) throw new Error("No matching country was found.");
     const exact = candidates.find(c => {
@@ -498,13 +498,111 @@ async function onCountrySubmit(event) {
     showApiMessage(result, `${error.message || "Country data is unavailable."} Please check your spelling and connection.`, true);
   } finally {
     button.disabled = false;
-    button.textContent = "Explore destination ↗";
+    setButtonLabel(button, "Explore destination");
   }
+}
+
+function initializeNavActive() {
+  const nav = qs("#primary-navigation");
+  const links = qsa("a[href^='#']", nav).filter(link => !link.classList.contains("nav-cta"));
+  if (!links.length) return;
+  const sections = new Map();
+  links.forEach(link => {
+    const section = document.getElementById(link.getAttribute("href").slice(1));
+    if (section) sections.set(section, link);
+  });
+
+  let activeLink = null;
+  const setActive = active => {
+    if (!active || active === activeLink) return;
+    activeLink = active;
+    links.forEach(link => link.classList.toggle("is-active", link === active));
+  };
+
+  const ordered = [...sections.keys()].sort((a, b) =>
+    a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
+  const visible = new Set();
+
+  let scrollLocked = false;
+  let unlockTimer = 0;
+  const update = () => {
+    if (scrollLocked || !visible.size) return;
+    setActive(sections.get(ordered.find(section => visible.has(section))));
+  };
+  const unlock = () => {
+    window.clearTimeout(unlockTimer);
+    scrollLocked = false;
+    update();
+  };
+  links.forEach(link => link.addEventListener("click", () => {
+    setActive(link);
+    scrollLocked = true;
+    window.clearTimeout(unlockTimer);
+    unlockTimer = window.setTimeout(unlock, 1200);
+  }));
+  if ("onscrollend" in window) {
+    window.addEventListener("scrollend", () => { if (scrollLocked) unlock(); });
+  }
+
+  if (!sections.size || !("IntersectionObserver" in window)) return;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) visible.add(entry.target);
+      else visible.delete(entry.target);
+    });
+    update();
+  }, { rootMargin: "-45% 0px -45% 0px" });
+  sections.forEach((link, section) => observer.observe(section));
+}
+
+function initializeGallery() {
+  const galleryDialog = qs("#gallery-dialog");
+  const cards = qsa(".gallery-card");
+  if (!galleryDialog || !cards.length) return;
+  const fullImage = qs("#gallery-full-image");
+  const galleryCaption = qs("#gallery-dialog-caption");
+  const closeButton = qs("#gallery-close");
+  let currentIndex = 0;
+  let lastTrigger = null;
+
+  const showPhoto = index => {
+    currentIndex = (index + cards.length) % cards.length;
+    const card = cards[currentIndex];
+    const photo = qs("img", card);
+    fullImage.src = photo.getAttribute("src");
+    fullImage.alt = photo.alt;
+    galleryCaption.textContent = qs("figcaption", card).textContent;
+  };
+
+  cards.forEach((card, index) => {
+    qs("button", card).addEventListener("click", event => {
+      lastTrigger = event.currentTarget;
+      showPhoto(index);
+      galleryDialog.showModal();
+      closeButton.focus();
+    });
+  });
+  qs("#gallery-prev").addEventListener("click", () => showPhoto(currentIndex - 1));
+  qs("#gallery-next").addEventListener("click", () => showPhoto(currentIndex + 1));
+  closeButton.addEventListener("click", () => galleryDialog.close());
+  galleryDialog.addEventListener("click", event => {
+    if (event.target === galleryDialog) galleryDialog.close();
+  });
+  galleryDialog.addEventListener("keydown", event => {
+    if (event.key === "ArrowRight") { event.preventDefault(); showPhoto(currentIndex + 1); }
+    if (event.key === "ArrowLeft") { event.preventDefault(); showPhoto(currentIndex - 1); }
+  });
+  galleryDialog.addEventListener("close", () => {
+    fullImage.removeAttribute("src");
+    if (lastTrigger && lastTrigger.isConnected) lastTrigger.focus();
+  });
 }
 
 function initialize() {
   initializeMenu();
+  initializeNavActive();
   initializeServices();
+  initializeGallery();
   initialiseDates();
   initializeBooking();
   qs("#weather-form").addEventListener("submit", onWeatherSubmit);

@@ -1,7 +1,5 @@
 "use strict";
-/* Optional photographs never show a broken image icon if a file is missing.
-   Owners can place licensed JPG photos into assets/website/ (see PHOTO_SETUP.md).
-   No third-party images are downloaded or substituted. */
+
 const photoSections = document.querySelectorAll('[data-optional-photo]');
 const stories = document.getElementById('photo-stories');
 photoSections.forEach(img => {
@@ -16,7 +14,6 @@ photoSections.forEach(img => {
 });
 
 
-/* Accessible on-page photograph lightbox. Delegation supports service filters. */
 const featureDialog = document.getElementById('feature-photo-dialog');
 const featureFull = document.getElementById('feature-photo-full');
 const featureCaption = document.getElementById('feature-photo-caption');
